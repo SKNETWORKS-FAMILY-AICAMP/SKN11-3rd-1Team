@@ -1,41 +1,19 @@
 # SKN11-3rd-1Team
 
-
-
-<details>
-  <summary>📌 목차 </summary>
-
-1. [팀 소개](#팀-소개)  
-2. [프로젝트 개요](#프로젝트-개요)  
-3. [기술 스택](#기술-스택)  
-4. [시스템 아키텍처](#시스템-아키텍처)  
-5. [WBS](#wbs)  
-6. [요구사항 명세서](#요구사항-명세서)  
-7. [수집한 데이터 및 전처리 요약](#수집한-데이터-및-전처리-요약)  
-8. [DB 연동 구현 코드](#db-연동-구현-코드)  
-9. [모델 선정 이유](#모델-선정-이유)  
-10. [테스트 계획 및 결과 보고서](#테스트-계획-및-결과-보고서)  
-11. [진행 과정 중 프로젝트 개선 노력](#진행-과정-중-프로젝트-개선-노력)  
-12. [수행 결과](#수행-결과)  
-13. [한 줄 회고](#한-줄-회고)
-
-</details>
-
-
 <br/>
 
 # 1. 팀 소개
 
-### 팀명
-
-- **사고 정찰단**
+### 팀명 : 🚨사고 정찰단
 
 
 # 🫡 팀원 소개
-
-| 성호진 | 신진슬 | 이채은 | 방성일 | 이선호 |
+| <div align="center">[성호진](https://github.com/DawnSurplus)</div> | <div align="center">[신진슬](https://github.com/SHINJINSEUL)</div> | <div align="center">[이채은](https://github.com/chaeeunlee05)</div> | <div align="center">[방성일](https://github.com/SungilBang12)</div> | <div align="center">[이선호](https://github.com/Seonh0)</div> |
 |--------|--------|--------|--------|--------|
-| <img src="./img/hojin.jpg" width="120"/><br>[GitHub](https://github.com/DawnSurplus)<br>hojin@example.com | <img src="./img/jinseul.jpg" width="120"/><br>[GitHub](https://github.com/SHINJINSEUL)<br>jinsl@example.com | <img src="./img/chaeun.jpg" width="120"/><br>[GitHub](https://github.com/chaeeunlee05)<br>chaeun@example.com | <img src="./img/sungil.jpg" width="120"/><br>[GitHub](https://github.com/SungilBang12)<br>sungil@example.com | <img src="./img/seonho.jpg" width="120"/><br>[GitHub](https://github.com/Seonh0)<br>sunho@example.com |
+| <img src="./img/성호진.png" width="120" height="120"/><br> | <img src="./img/신진슬.png" width="120" height="120"/><br> | <img src="./img/이채은.png" width="120" height="120"/><br> | <img src="./img/방성일.png" width="120" height="120"/><br> | <img src="./img/이선호.png" width="120" height="120"/><br> |
+
+
+
 
 
 <br/><br/>
@@ -44,9 +22,7 @@
 
 <aside>
 
-### 프로젝트 명
-
-- 교통사고 과실비율 산정 AI 챗봇 **<노느>**
+### 프로젝트 명 < `교통사고 과실비율 산정 AI 챗봇 <노느>` >
 
 
 <p align="center">
@@ -73,21 +49,12 @@
     
     <출처 : 과실비율정보포털>
     
-    - 기사
-        
-        https://www.skyedaily.com/news/news_view.html?ID=155657
-        
-        “이에 따르면 과실비율분쟁 심의를 청구한 운전자의 82.8%가 “내가 피해자”라고 주장했다. 55.7%는 본인이 무과실이라고 여겼고, 81.5%가 서로 다른 사고 원인을 주장했다.”
         
     - 연간 126만 건 이상의 교통사고 발생 시, 당사자 간 주관적 주장으로 인한 분쟁 증가
     - **객관적 기준이 아닌 감정과 오해에 기반한 과실 주장 증가**로 인해, 법적 판단과 다른 무리한 요구가 빈번히 발생하며 공정하고 신속한 과실 산정을 어렵게 만듦
 2. 일반인이 이해하기 어려운 법
     - 과실비율이 산정은 전문 지식이 필요한 도로교통법, 민법, 보험약관, 판례 등을 바탕으로 진행
         
-        ![img.png](./img/과실비율기사.png)
-        
-    
-    (https://www.kukinews.com/article/view/kuk202208020071)
     
     - 일반인의 이해 한계로 인해 **불공정한 합의가 이뤄질 가능성**이 큼.
 3. **판례 검색의 한계**
@@ -96,7 +63,7 @@
     - 사고 후 보상 절차에서 표준화된 과실비율 판단 기준이 없거나, 설명이 충분하지 않을 경우 당사자 간 신뢰가 무너지고 보험사에 대한 불신이 커짐.
     - 기사
         
-        https://www.ddaily.co.kr/page/view/2024101709241277483
+        ![img.png](./img/article3.png)
         
         “교통사고 현장에서 보험사의 과실비율 짬짜미 때문에 피해보상이 제대로 이뤄지지 않고 있다는 불신이 있다”
 
@@ -111,18 +78,18 @@
 <br/><br/>
 
 
-# WBS
+# 3. WBS
 
 ![image.png](./img/WBS.png)
 
-# 요구사항 명세서
+# 4. 요구사항 명세서
 
 ![image.png](./img/요구사항명세서.png)
 
 
 <br/><br/>
 
-# 기술 스택 & 사용한 모델 (임베딩 모델, LLM)
+# 5. 기술 스택 & 사용한 모델 (임베딩 모델, LLM)
 
 
 | 카테고리 | 기술 스택 |
@@ -138,24 +105,22 @@
 
 <br/><br/>
 
-# 시스템 아키텍처
+# 6. 시스템 아키텍처
 
 
 ![image.png](./img/architecture.jpg)
 
 <br/>
 
-# 시스템 워크플로우
+# 7. 시스템 워크플로우
 
 
 ![image.png](./img/workflow.jpg)
 
-- 질의 목적 구분(LLM) 문구 추가
-- 
 
 <br/><br/>
 
-# 데이터 및 전처리
+# 8. 수집한 데이터 및 전처리 요약
 
 <aside>
 
@@ -168,7 +133,7 @@
 
 <br/><br/>
 
-# 전처리
+## 데이터 구조
 
 ![pdf_ex.png](./img/pdf_ex.png)
 
@@ -227,6 +192,8 @@
     <br/>
 
 - ## `load_traffic_law.json`
+
+- 국가 정보센터 홈페이지에서 도로교통법 관련 데이터 확보
     
     
     ### 📘 도로교통법 JSON 데이터 구조
@@ -240,6 +207,8 @@
 
     
 - ## `term.json`
+
+- 과실비율 정보포털 ‘과실비율 용어해설‘ section 크롤링
     
     
     ### 📘 term.json 데이터 구조
@@ -302,56 +271,43 @@
 # 프로그램 개선 노력
 
 ### 1. RAG - self리트리버 사용
-    - 호진
+- 판례’ 검색의 경우, 임베딩 기반 벡터DB의 한계로 숫자와 한글이 섞인 **`"92도2077"`** 같은 고유값을 의미적 유사도 기반으로 찾아오지 못하는 경우 발생
+- 리트리버에 필터를 적용하여 메타데이터와 고유값이 일치하는 경우 정상적으로 찾아 오는 것 확인
+    - 사용자 입력에서 해당 메타데이터 추출 필요
+- self리트리버 적용 시, query에서 자동으로 메타데이터에 해당하는 부분 추출 및 일치하는 부분 search가능
 ### 2. pdf-json 비교검증 → 정확성 향상
-    - openai gpt 코드로 pdf 문서를 각 케이스별 상황으로 다 쪼개서 메타데이터 만들어달라
-    - 적용 → 비적용 (잘 못 들어감)
-    - 일일이 하나하나 검수했다
+ 
 ### 3. 프롬프트 최적화
     
     
-    | 번호 | 항목명               | 설명 |
-    |------|----------------------|------|
-    | 1    | 🧠 질문 분류          | 사용자의 질문을 사고, 법률, 판례, 용어, 일반 다섯 유형 중 하나로 분류하여 흐름을 제어함 |
-    | 2    | 🧷 사건 선택 및 연계   | 유사한 사고 사례를 식별하고 사건 ID를 고정 형식으로 출력하여 후속 판단과 연계 |
-    | 3    | ⚖️ 사고 판단 자동화    | 문서 기반 사례를 분석해 과실비율과 판단 사유를 자동 도출하며 응답 일관성을 확보 |
-    | 4    | 📚 법률 정보 구조화    | 문서 기반 판례, 조문, 용어를 정형화된 형식으로 요약해 전문성과 응답 품질을 향상 |
-    | 5    | 💡 일반 지식 대응      | 문서에 없는 질문도 AI의 상식으로 자연스럽고 유연하게 응답 |
+| 번호 | 항목명               | 설명 |
+|------|----------------------|------|
+| 1    | 🧠 질문 분류          | 사용자의 질문을 사고, 법률, 판례, 용어, 일반 다섯 유형 중 하나로 분류하여 흐름을 제어함 |
+| 2    | 🧷 사건 선택 및 연계   | 유사한 사고 사례를 식별하고 사건 ID를 고정 형식으로 출력하여 후속 판단과 연계 |
+| 3    | ⚖️ 사고 판단 자동화    | 문서 기반 사례를 분석해 과실비율과 판단 사유를 자동 도출하며 응답 일관성을 확보 |
+| 4    | 📚 법률 정보 구조화    | 문서 기반 판례, 조문, 용어를 정형화된 형식으로 요약해 전문성과 응답 품질을 향상 |
+| 5    | 💡 일반 지식 대응      | 문서에 없는 질문도 AI의 상식으로 자연스럽고 유연하게 응답 |
     
     
 ### 4. 파인튜닝
 
- 
-    1. 질의 목적 판단
-    2. 용어/판례/법률 관련부분 추출
-        - <Bllossom/llama-3.2-Korean-Bllossom-3B>, ChromaDB(consine 유사도)
-            
-            ![image.png](attachment:0e75e7c8-b2a3-4028-88c8-0b36f798196b:image.png)
-            
-        - <Bllossom/llama-3.2-Korean-Bllossom-3B>, ChromaDB(consine 유사도), qLoRA 파인튜닝
-            
-            ![qlora_bllosom_model.png](attachment:6c7d4cae-a03d-4ac8-83d1-bd40aa4553e9:qlora_bllosom_model.png)
-            
-        - saltlux/Ko-Llama3-Luxia-8B>, ChromaDB
-            
-            ![스크린샷 2025-05-14 112012.png](attachment:ac9e5a10-e1da-456c-aa0c-954af1966da5:43d27264-c2d6-4cc9-a233-2dda8cca6b2b.png)
-            
-    - <saltlux/Ko-Llama3-Luxia-8B>, ChromaDB, qLoRA 파인튜닝
-        
-        ![스크린샷 2025-05-14 111956.png](attachment:a44520b8-e2fe-48fa-b93b-13b5b4baa14e:스크린샷_2025-05-14_111956.png)
-        
-    - <saltlux/Ko-Llama3-Luxia-8B>, ChromaDB(cosine 유사도), qLoRA 파인튜닝
-        
-        ![스크린샷 2025-05-14 111956.png](attachment:a44520b8-e2fe-48fa-b93b-13b5b4baa14e:스크린샷_2025-05-14_111956.png)
-        
-    - <saltlux/Ko-Llama3-Luxia-8B>, FAISS(cosine 유사도), qLoRA 파인튜닝
-        
-        ![스크린샷 2025-05-14 111956.png](attachment:a44520b8-e2fe-48fa-b93b-13b5b4baa14e:스크린샷_2025-05-14_111956.png)
-        
-    - 질문 분류<saltlux/Ko-Llama3-Luxia-8B>, FAISS(cosine 유사도), qLoRA 파인튜닝
-        
-        ![스크린샷 2025-05-14 133739.png](attachment:b2f2241a-3e07-4870-9f03-230e0f477db6:스크린샷_2025-05-14_133739.png)
-        
+**Bllossom/llama-3.2-Korean-Bllossom-3B**
+| ![Image](https://github.com/user-attachments/assets/66f5415a-e1dc-47b2-9f79-408af82c0f31) | ![Image](https://github.com/user-attachments/assets/54626f32-8951-46d9-9999-d2815f3699d1)|
+|:------------------------------------:|:------------------------------------:|
+| ChromaDB(consine 유사도)|ChromaDB(consine 유사도)<br>**+ qLoRA 파인튜닝**|
+
+
+
+**saltlux/Ko-Llama3-Luxia-8B**
+| ![Image](https://github.com/user-attachments/assets/5e0f9405-64a9-4029-bd36-f9c184efc71a) | ![Image](https://github.com/user-attachments/assets/19b31c07-ed37-4119-b458-3e8022f2a1ed)|
+|:------------------------------------:|:------------------------------------:|
+| ChromaDB|ChromaDB<br>**+ qLoRA 파인튜닝**|
+
+**saltlux/Ko-Llama3-Luxia-8B**
+| ![Image](https://github.com/user-attachments/assets/9085feab-ad24-4c4f-8450-f6e443af4480) | ![Image](https://github.com/user-attachments/assets/91e8731d-877f-4b01-af9c-103530787c65)|
+|:------------------------------------:|:------------------------------------:|
+|  **ChromaDB(cosine 유사도)**<br> **+ qLoRA 파인튜닝**|**FAISS(cosine 유사도)** <br> **+ qLoRA 파인튜닝**|
+
 <br/><br/>
 
 # 수행결과(테스트/시연 페이지)
