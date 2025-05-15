@@ -1,6 +1,8 @@
 import re
 import os
 import numpy as np
+from langchain.schema import Document
+import json
 from dotenv import load_dotenv
 load_dotenv()
 from langchain.prompts import PromptTemplate
@@ -14,6 +16,8 @@ from langchain.vectorstores import Chroma
 from langchain_openai import OpenAIEmbeddings
 import streamlit as st
 from streamlit_chat import message
+from pathlib import Path
+import base64
 import time
 
 
@@ -64,13 +68,6 @@ METADATA_KEY = {
 
 
 # # 1. Documentation (문서화)
-
-# ### IMPORT
-
-from langchain.schema import Document
-import json
-
-
 # ### Function
 
 # JSON 로드 함수
@@ -187,18 +184,13 @@ modifier_docs = convert_list_to_documents(load_json(FILE_PATH['MODIFIER']), 'mod
 accident_docs = car_case_docs + modifier_docs
 
 
-# # 2. Vector DB 저장
+#  2. Vector DB 저장
 
-# ### IMPORT
-
-# ### Embedding Model
 # 임베딩 모델
 embedding_model = OpenAIEmbeddings(model='text-embedding-3-large')
 
 
 # 각 문서별 Collection 나눠 저장
-
-# Document -> Vector DB 저장
 
 # Document -> Vector DB 저장 / 로드
 def docs_to_chroma_db(docs, collection_name):
@@ -252,7 +244,7 @@ GPT_4O_MODEL = ChatOpenAI(model="gpt-4o", temperature=0)
 GPT_3_5_MODEL = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
 
 
-# ### Function
+# 기능
 
 # 질의 목적 구분
 def classify_query(user_input: str) -> str:
@@ -567,7 +559,7 @@ def process_load_traffic_law(user_input):
     # 프롬프트 구성
     prompt = PromptTemplate(
         input_variables=["question", "context"],
-        template="""아래 문서 내용을 바탕으로 사용자가 물어본 도로교통법 내용용에 대해 정확하고 간결하게 설명해 주세요.
+        template="""아래 문서 내용을 바탕으로 사용자가 물어본 도로교통법 내용에 대해 정확하고 간결하게 설명해 주세요.
         
         질문: {question}
         
@@ -630,67 +622,7 @@ SITUATION_CASE = {
     'LAW' : "law",
 }
 
-
-# 프로그램 실행
-# 페이지 설정
-# st.set_page_config(page_title="과실비율 챗봇", page_icon="🤖")
-
-# # ✅ 제목을 가운데 정렬
-# st.markdown("""
-#     <div style='text-align: center;'>
-#         <h1>🤖 교통사고 과실비율 챗봇</h1>
-#     </div>
-# """, unsafe_allow_html=True)
-
-# # 대화 기록 초기화
-# if "chat_history" not in st.session_state:
-#     st.session_state.chat_history = [
-#         ("bot", "과실비율 판단봇입니다. 사고 상황을 설명해주세요.")
-#     ]
-
-# # 사용자 입력받기
-# user_input = st.chat_input("사고 상황을 입력해주세요")
-
-# if user_input:
-#     # 사용자 메시지 추가
-#     st.session_state.chat_history.append(("user", user_input))
-
-#     # 분류 및 응답 처리
-#     try:
-#         category = classify_query(user_input)
-
-#         if category == SITUATION_CASE['ACCIDENT']:
-#             response = process_accident(user_input)
-#         elif category == SITUATION_CASE['TERM']:
-#             response = process_term(user_input)
-#         elif category == SITUATION_CASE['PRECEDENT']:
-#             response = process_precedent(user_input)
-#         elif category == SITUATION_CASE['LAW']:
-#             response = process_load_traffic_law(user_input)
-#         else:
-#             response = process_general(user_input)
-
-#     except Exception as e:
-#         response = f"⚠️ 오류가 발생했습니다: {e}"
-
-#     # 챗봇 응답 추가
-#     st.session_state.chat_history.append(("bot", response))
-
-# # 대화 내용 출력
-# for i, (sender, msg) in enumerate(st.session_state.chat_history):
-#     message(msg, is_user=(sender == "user"), key=str(i))
-
-# 페이지 설정
-
-
-
 # 페이지 기본 설정
-# 페이지 세팅
-import streamlit as st
-import time
-from pathlib import Path
-from streamlit_chat import message
-import base64
 
 # ✅ 페이지 설정
 st.set_page_config(page_title="과실비율 챗봇", page_icon="🤖", layout="centered")
