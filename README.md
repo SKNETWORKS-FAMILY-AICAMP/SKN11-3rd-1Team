@@ -27,7 +27,7 @@
 
 <p align="center">
   <img src="./img/article1.png" width="250"/>
-  <img src="./img/노느logo.png" width="180"/>
+  <img src="./img/노느Logo.png" width="180"/>
   <img src="./img/article2.png" width="250"/>
 </p>
 
