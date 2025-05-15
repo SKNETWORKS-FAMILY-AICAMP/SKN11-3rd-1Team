@@ -240,7 +240,7 @@ SITUATION_CASE = {
     'LAW' : "law",
 }
 
-GPT_4O_MODEL = ChatOpenAI(model="gpt-4o", temperature=0)
+GPT_4O_MODEL = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 GPT_3_5_MODEL = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
 
 
@@ -419,7 +419,7 @@ def process_precedent(user_input):
     template="""
 너는 교통사고 판례를 요약 정리해주는 전문가야.
 
-아래 문서(context)를 참고하여 사용자의 질문에 대해 관련된 판례를 **복수 개** 정리해줘.  
+아래 문서(context)를 참고하여 사용자의 질문에 대해 관련된 판례를 설명해줘.  
 각 판례는 아래와 같은 **깔끔한 형식**으로 나열해 줘.
 참고한 **다른** 판례가 있다면 따로 출력해줘 (예시:서울중앙지방법원 2015나60480)
 
