@@ -234,15 +234,12 @@
 <aside>
 
 - URL : 
-[ChromaDB](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN11-3rd-1Team/blob/main/test/final.ipynb)
+[vector_db_output/vectordb.ipynb](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN11-3rd-1Team/blob/main/vector_db_output/vectordb.ipynb)
 
 ## **DB 연동 구현 내용**
-
-**구현 내용 요약**
-
-- DB 연동 용으로 `Langchain`의 `Document` 개체로 변환된 데이터
-- `OpenAI Embedding` 모델로 벡터화
-- `Chroma`기반 Vector DB로 저장하여 RAG 검색 시스템에 최종 연동
+- 각 문서별(판례, 용어, 사고상황) 개별 Document 객체 생성
+- OpenAI Embedding 모델로 벡터화
+- 각 Document를 컬렉션 별로 나누어 `Chroma DB`로 저장하여 RAG에 최종 적용
 
 <br/><br/>
 
@@ -342,21 +339,16 @@
 
 ### 호진
 
-- 
+- 데이터 수집부터 전처리, LangChain, RAG, ChromaDB, Fine-Tuning 등 지금까지 배워왔던 부분을 종합적으로 적용해보며 수업 외 많은 경험을 할 수 있는 시간이었습니다. 특히, ‘판례’검색 케이스에서 Retriever가 벡터DB에 있는 사건케이스(고유값)에 해당하는 내용을 가져오지 못하는 문제를 해결하기 위해 다양한 시도를 하며 얻은 아이디어를 바탕으로 프로그램 전체적으로 정확성을 올리는 방향이 된 것 같아 좋은 경험이 되었습니다.
 
 ### 성일
 
-- 
+- 파인튜닝의 결과가 기대에 못미쳐 성취감이 부족하다. 돌이켜보면 데이터 전처리부터 모델 튜닝까지 수업시간에 배운 내용들을 활용할 수 있어 내가 부족한 부분이 어느 부분인지 짚어볼 수 있는 기회였던 것 같다.
 
 ### 채은
 
-- 
+- 이번 프로젝트를 통해 AI의 판단 흐름을 구체적으로 설계함으로써 프롬프트 최적화의 중요성과 설계 전략을 깊이 있게 배울 수 있었습니다. 또한 벡터 DB 구축, 코사인 유사도 계산, RAG 기반 질의응답 등 다양한 LLM 응용 기법을 실습하며, 이론으로만 알던 개념을 복습할 수 있는 시간이었습니다.
 
 ### 진슬
 
-- 
-
-### 선호
-
-- 
-
+- 이번 프로젝트를 통해 LangChain의 모듈화된 구조를 이해하고, 문서 기반 검색과 생성형 응답이 결합된 RAG 방식의 장점을 알게 되었습니다. 그리고 특히 사고 상황 유사도를 기반으로 유의미한 판례를 추출하여, 이를 GPT가 근거와 함께 판단하는 흐름이 인상 깊었습니다. 이번 프로젝트를 하면서 가장 많은 경험을 해본 것 같습니다.
