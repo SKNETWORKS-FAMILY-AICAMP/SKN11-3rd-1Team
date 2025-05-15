@@ -623,8 +623,6 @@ SITUATION_CASE = {
 }
 
 # 페이지 기본 설정
-
-# ✅ 페이지 설정
 st.set_page_config(page_title="과실비율 챗봇", page_icon="🤖", layout="centered")
 
 # ✅ 이미지 base64 인코딩 함수
@@ -673,36 +671,22 @@ if user_input:
 for i, (sender, msg) in enumerate(st.session_state.chat_history):
     is_last = (i == len(st.session_state.chat_history) - 1 and sender == "bot")
 
-    if sender == "user":
-        st.markdown(f"""
-            <div style='display: flex; justify-content: flex-end; margin-top: 0.5rem;'>
-                <div style='background-color: #DCF8C6; padding: 10px 14px; border-radius: 20px; max-width: 70%; font-size: 15px; line-height: 1.5; color: #000;'>
-                    😎 {msg}
-                </div>
-            </div>
-        """, unsafe_allow_html=True)
-
+    if is_last:
+        container = st.empty()
+        display = ""
+        for char in msg:
+            display += char
+            container.chat_message("assistant", avatar=chatbot_avatar).write(display)
+            time.sleep(0.02)
     else:
-        if is_last:
-            container = st.empty()
-            display = ""
-            for char in msg:
-                display += char
-                container.markdown(f"""
-                    <div style='display: flex; justify-content: flex-start; margin-top: 0.5rem;'>
-                        <img src="{chatbot_avatar}" width="28" style="margin-right: 8px;"/>
-                        <div style='background-color: #FFF; padding: 10px 14px; border-radius: 20px; max-width: 70%; font-size: 15px; line-height: 1.5; color: #000; border: 1px solid #ddd;'>
-                            {display}
-                        </div>
-                    </div>
-                """, unsafe_allow_html=True)
-                time.sleep(0.02)
-        else:
+        if sender == "user":
             st.markdown(f"""
-                <div style='display: flex; justify-content: flex-start; margin-top: 0.5rem;'>
-                    <img src="{chatbot_avatar}" width="28" style="margin-right: 8px;"/>
-                    <div style='background-color: #FFF; padding: 10px 14px; border-radius: 20px; max-width: 70%; font-size: 15px; line-height: 1.5; color: #000; border: 1px solid #ddd;'>
-                        {msg}
+                <div style='display: flex; justify-content: flex-end; margin-top: 0.5rem;'>
+                    <div style='background-color: #DCF8C6; padding: 10px 14px; border-radius: 20px; max-width: 70%; font-size: 15px; line-height: 1.5; color: #000;'>
+                        😎 {msg}
                     </div>
                 </div>
             """, unsafe_allow_html=True)
+        else:
+            with st.chat_message("assistant", avatar=chatbot_avatar):
+                st.markdown(msg)
